@@ -36,26 +36,26 @@ afterEach(async () => {
   await browser.close();
 });
 
-describe("anchor", () => {
-  it("should contain a div with the id of footer", async () => {
-    const footer = await page.$('div[id="footer"]');
-    expect(footer).not.toBeNull();
+describe("unordered list", () => {
+  it("should exist", async () => {
+    const unorderedList = await page.$("ul");
+    expect(unorderedList).not.toBeNull();
   });
 
-  it("should link to footer id", async () => {
-    const inPageAnchor = await page.$('a[href="#footer"]');
-    expect(inPageAnchor).not.toBeNull();
+  it("should have 3 list items", async () => {
+    const unorderedListItems = await page.$$("ul > li");
+    expect(unorderedListItems.length).toBe(3);
+  });
+});
+
+describe("ordered list", () => {
+  it("should exist", async () => {
+    const orderedList = await page.$("ol");
+    expect(orderedList).toBeDefined();
   });
 
-  it("should open a website in a new tab", async () => {
-    const tabAnchor = await page.$('a[href^="http"][target="_blank"]');
-    expect(tabAnchor).not.toBeNull();
-  });
-
-  it("should open a website in the same page", async () => {
-    const samePageAnchor = await page.$(
-      'a[href^="http"]:not([target="_blank"])'
-    );
-    expect(samePageAnchor).not.toBeNull();
+  it("should have 3 list items", async () => {
+    const orderedListItems = await page.$$("ol > li");
+    expect(orderedListItems.length).toBe(3);
   });
 });
