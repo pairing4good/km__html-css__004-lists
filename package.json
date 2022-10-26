@@ -2,7 +2,7 @@
   "name": "km-titles-headings-paragraphs",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest --reporters jest-summarizing-reporter"
+    "test": "jest --reporters default --reporters jest-summarizing-reporter"
   },
   "dependencies": {
     "puppeteer": "^19.1.2"
