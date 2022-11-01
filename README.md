@@ -1,3 +1,7 @@
+# 004 Lists
+
+[![004 Lists](https://img.youtube.com/vi/-thsse3omVA/0.jpg)](https://www.youtube.com/watch?v=-thsse3omVA)
+
 The `index.html` file
 - should contain an unordered list with 3 items
 - should contain an ordered list with 3 items
